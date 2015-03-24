@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+    <form class="" action="/money" method="post" name="money">
+        {{ form.hidden_tag() }}
+        {% if form.errors %}
+                {% for field_name, field_errors in form.errors|dictsort if field_errors %}
+                    {% for error in field_errors %}
+                        <div class="alert alert-danger">{{ form[field_name].label }}: {{ error }}</div>
+                    {% endfor %}
+                {% endfor %}
+        {% endif %}
+        <label>want</label>
+        {{ form.want(class_="form-control") }}
+        <label>currency</label>
+        {{ form.currency(class_="form-control") }}
+        <label>total</label>
+        {{ form.total(class_="form-control") }}
+        <label>course</label>
+        {{ form.course(class_="form-control") }}
+        <label>phone</label>
+        {{ form.phone(class_="form-control") }}
+        <label>city</label>
+        {{ form.city(class_="form-control") }}
+        <label>area</label>
+        {{ form.area(class_="form-control") }}
+        <label>comment</label>
+        {{ form.comment(class_="form-control") }}
+        <label>relevant</label>
+        {{ form.relevant(class_="form-control") }}
+        <label>pub_date</label>
+        {{ form.pub_date(class_="form-control") }}
+       
+        
+        <br>
+        <input type="submit" class="btn btn-success" value="Create Account">
+    </form>
+{% endblock %}
+

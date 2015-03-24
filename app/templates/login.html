@@ -1,0 +1,26 @@
+<!-- extend from base layout -->
+
+{% extends "base.html" %}
+{% block content %}
+    <form class="" action="/login" method="post" name="login">
+        {{ form.hidden_tag() }}
+        {% if form.errors %}
+                {% for field_name, field_errors in form.errors|dictsort if field_errors %}
+                    {% for error in field_errors %}
+                        <div class="alert alert-danger">{{ form[field_name].label }}: {{ error }}</div>
+                    {% endfor %}
+                {% endfor %}
+        {% endif %}
+{% for message in form.get_user.errors %}
+   <div class="flash">{{ message }}</div>
+   {% endfor %}
+
+        <label>Email</label>
+        {{ form.email(class_="form-control") }}
+        <label>Password</label>
+        {{ form.password(class_="form-control") }}
+        
+        <br>
+        <input type="submit" class="btn btn-success" value="Login">
+    </form>
+{% endblock %}

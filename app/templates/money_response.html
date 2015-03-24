@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+  <body>
+    <div class="container">
+      <div class="header">
+	<h3 class="text-muted">Flask form validation</h3>
+      </div>
+      <hr/>
+      <h3>Data entered</h3>
+      <table class="table">
+	<tbody>
+	  <tr>
+	    <td>Name</td>
+	    <td>{{ data.name }}</td>
+	  </tr>
+	  <tr>
+	    <td>Email</td>
+	    <td>{{ data.email }}</td>
+	  </tr>
+	  <tr>
+	    <td>Gender</td>
+	    <td>{{ data.gender }}</td>
+	  </tr>
+	  <tr>
+	    <td>Username</td>
+	    <td>{{ data.username }}</td>
+	  </tr>
+	  <tr>
+	    <td>Password</td>
+	    <td>{{ data.password }}</td>
+	  </tr>
+	</tbody>
+      </table>
+    </div>
+  </body>
+</html>
+
+        
+	</body>
+{% endblock %}

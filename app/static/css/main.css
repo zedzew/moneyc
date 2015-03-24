@@ -1,0 +1,54 @@
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+li {
+  display: inline;
+}
+
+body {
+    padding-top: 30px;
+    padding-bottom: 15px;
+  
+}
+
+hr {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #EEEEEE -moz-use-text-color #FFFFFF;
+    border-style: solid none;
+    border-width: 1px 0;
+    margin: 20px 0;
+
+}
+
+.navbar .btn {
+    display: inline;
+}
+
+.search {
+    display: inline-block;
+    width: auto;
+
+}
+
+.alert {
+    padding: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+
+}
+
+/* Message flashing */
+.flash {
+  background-color: #FBB0B0;
+  padding: 10px;
+  width: 400px;
+}
+

@@ -1,0 +1,44 @@
+<head> 
+    {% if title %}
+        <title>{{ title }} &middot; MoneyC</title>
+    {% else %}
+        <title>Main &middot; MoneyC</title>
+    {% endif %}
+    <link rel="stylesheet" href="{{ url_for('static', filename="css/bootstrap.min.css") }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename="css/main.css") }}">
+
+    <script src="{{ url_for('static', filename="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js") }}"></script>
+
+</head>
+<body>
+  <div class="container">
+    <h1 class="logo">Money Changer</h1>
+    <nav>
+    <ul class="menu">
+	<li><a href='{{ url_for('index') }}'> MoneyC</a></li>
+	<li><a href='{{ url_for('register') }}'> Registration</a></li>
+    <li><a href='{{ url_for('login') }}'> Login</a></li>
+    <li><a href='{{ url_for('money') }}'> Money</a></li>
+    
+	<hr>
+	</ul>
+    </nav>
+  </div>
+
+<div class="container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <br>
+
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+
+
+</html>
